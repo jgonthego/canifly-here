@@ -3,4 +3,5 @@
 - To deepen a state: add an entry under `focus` with its slug (e.g. `ohio`).
 - Build: `BASE=https://<user>.github.io/<repo> python3 build.py` → outputs `docs/` (static HTML, sitemap.xml, robots.txt).
 - Deploy (GitHub Pages): `gh auth login`; `gh repo create canifly-here --public --source . --push`; then repo Settings → Pages → branch `main`, folder `/docs`. Rebuild + push to update.
-- Placeholders: Formspree form ID (`FORM` in build.py), affiliate slots (`AFFILIATE SLOT` comments), sponsor block.
+- Newsletter form: controlled by the `FORM_ID` env var (Formspree form ID, currently `xnpjopyv`), set in the build step `env:` of `.github/workflows/pages.yml`. If unset, the signup form is omitted and a `NEWSLETTER HOOK` comment marks its spot. Local build: `FORM_ID=xnpjopyv BASE=... python3 build.py`.
+- Placeholders: affiliate slots (`AFFILIATE SLOT` comments) and sponsor link; add real offers there.
